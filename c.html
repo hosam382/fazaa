@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https:; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>فزعة · حاج تائه</title>
+<meta name="theme-color" content="#c8371b">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page" hidden>
+  <header class="h-band">
+    <h1 id="found"></h1>
+    <select id="lang" aria-label="Language · اللغة"></select>
+  </header>
+  <main class="h-main">
+    <section class="who">
+      <p class="nm" id="nm" dir="auto"></p>
+      <dl>
+        <div><dt id="tSpeaks"></dt><dd id="speaks"></dd></div>
+        <div id="rowPlace"><dt id="tPlace"></dt><dd class="big" id="place" dir="auto"></dd></div>
+        <div id="rowGroup"><dt id="tGroup"></dt><dd id="group" dir="auto"></dd></div>
+      </dl>
+    </section>
+
+    <div class="h-acts">
+      <a class="btn call" id="call"></a>
+      <a class="btn" id="fam"></a>
+      <a class="btn" id="map" target="_blank" rel="noopener"></a>
+    </div>
+
+    <details class="health" id="health"><summary id="tHealth"></summary><p id="healthTxt" dir="auto"></p></details>
+
+    <section class="sec">
+      <h2 id="tSay"></h2>
+      <p class="hint" id="tHint"></p>
+      <div class="phr" id="phr"></div>
+    </section>
+
+    <section class="sec">
+      <h2 id="tAsk"></h2>
+      <div class="needs" id="needs"></div>
+    </section>
+
+    <section class="sec free">
+      <h2 id="tFree"></h2>
+      <div class="dir" id="dir"></div>
+      <div class="rowf"><input id="freeIn" maxlength="300" autocomplete="off" dir="auto"><button class="btn main" id="freeGo" type="button"></button></div>
+      <button class="btn" id="freeMic" type="button" hidden></button>
+      <output id="freeOut" dir="auto"></output>
+      <p class="hint" id="freeNote"></p>
+    </section>
+  </main>
+</div>
+
+<div class="bad" id="bad" hidden><p id="badTxt"></p><a class="btn" href="./">فزعة</a></div>
+
+<div class="show" id="show" role="dialog" aria-modal="true" aria-labelledby="showTxt">
+  <div class="cap"><span id="showCap"></span></div>
+  <p class="txt" id="showTxt"></p>
+  <div>
+    <p class="sub" id="showSub"></p>
+    <div class="bar"><button class="btn main" id="showSay" type="button"></button><button class="btn" id="showBack" type="button"></button></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="helper.js"></script>
+</body>
+</html>

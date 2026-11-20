@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https:; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>فزعة · بطاقة الحاج التائه</title>
+<meta name="description" content="بطاقة برمز لكل حاج في الحملة: إذا تاه، أي أحد يمسحها بكاميرا جواله فيعرف أين يوصله ويكلمه بلغته.">
+<meta name="theme-color" content="#c8371b">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./">فزعة</a>
+  <span class="proto">نموذج تجريبي · فكرة وتنفيذ حسام حسين بخش</span>
+</div></header>
+
+<main class="wrap">
+  <section class="lede">
+    <h1>إذا تاه حاج من حملتك، <em>أي أحد</em> يقدر يرجّعه.</h1>
+    <p>بطاقة برمز لكل حاج. اللي يلقاه يمسحها بكاميرا جواله، بدون تطبيق، فتفتح له صفحة بلغته هو.</p>
+    <ol class="steps">
+      <li>يعرف اسم الحاج، ومكان سكنه، ورقم مشرف الحملة.</li>
+      <li>يتصل بالمشرف بضغطة.</li>
+      <li>يكلّم الحاج بلغته بعبارات جاهزة، والحاج يختار حاجته بالصور.</li>
+    </ol>
+  </section>
+
+  <div class="maker">
+    <section class="block">
+      <h2>بيانات الحملة</h2>
+      <div class="grid2">
+        <label>اسم الحملة<input id="g" maxlength="60" autocomplete="off" placeholder="مثال: حملة الصفا"></label>
+        <label>جوال المشرف <small>بالصيغة الدولية</small><input id="s" class="ltr" inputmode="tel" maxlength="20" autocomplete="off" placeholder="+9665XXXXXXXX"></label>
+        <label>مكان السكن <small>المخيم أو الفندق، كما يُكتب على اللوحة</small><input id="c" maxlength="120" autocomplete="off" placeholder="مثال: منى، مخيم ٤٥، شارع ٢٠٤"></label>
+        <label>رابط الموقع في الخرائط <small>اختياري</small><input id="m" class="ltr" inputmode="url" maxlength="200" autocomplete="off" placeholder="https://maps.app.goo.gl/…"></label>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>الحجاج</h2>
+      <div id="pilgrims"></div>
+      <div class="acts">
+        <button class="btn" id="add" type="button">أضف حاجاً</button>
+        <button class="btn quiet" id="demo" type="button">عبّئ مثالاً للتجربة</button>
+      </div>
+    </section>
+
+    <section class="block out">
+      <h2>البطاقات</h2>
+      <div class="cards" id="cards"></div>
+      <div class="acts">
+        <button class="btn main" id="print" type="button">اطبع البطاقات</button>
+      </div>
+    </section>
+
+    <aside class="note">
+      <b>قبل ما تعتمد عليها:</b>
+      <ul>
+        <li>بيانات الحاج محفوظة داخل الرمز نفسه، وما تُرسل ولا تُحفظ في أي خادم. اللي يمسح الرمز يشوفها، فلا تكتب فيها إلا ما يلزم لإرجاعه.</li>
+        <li>العبارات الجاهزة بتسع لغات تعمل الآن. الترجمة الحرة بالصوت تحتاج ربط خدمة ترجمة.</li>
+        <li>ترجمات الهوسا والبنغالية تحتاج مراجعة من أهل اللغة قبل الموسم.</li>
+        <li>النموذج لا يغني عن بطاقة «نسك» الرسمية ولا عن مراكز إرشاد التائهين.</li>
+      </ul>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">فزعة · نموذج تجريبي لخدمة الحجاج التائهين · فكرة وتنفيذ: حسام حسين بخش</div></footer>
+
+<template id="pilTpl">
+  <div class="pil">
+    <div class="pil-head"><b class="num"></b><button class="btn quiet del" type="button">احذف</button></div>
+    <div class="grid2">
+      <label>اسم الحاج<input class="n" maxlength="40" autocomplete="off"></label>
+      <label>لغته<select class="l"></select></label>
+      <label>جوال أحد أهله <small>اختياري</small><input class="f ltr" inputmode="tel" maxlength="20" autocomplete="off"></label>
+      <label>ملاحظة صحية <small>اختياري، تظهر لمن يمسح</small><input class="h" maxlength="120" autocomplete="off" placeholder="مثال: سكري، دواؤه في حقيبته"></label>
+    </div>
+  </div>
+</template>
+
+<script src="qr.js"></script>
+<script src="data.js"></script>
+<script src="maker.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* «فزعة»: ورق أبيض، حبر أسود، ولون إشارة واحد. مصمَّمة لتنقرأ تحت الشمس وبإصبع واحد. */
+@font-face{font-family:'Ruqaa';font-weight:700;font-display:swap;src:url(ruqaa-700-ar.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:400;font-display:swap;src:url(plex-400-ar.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Plex';font-weight:400;font-display:swap;src:url(plex-400-lat.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+@font-face{font-family:'Plex';font-weight:700;font-display:swap;src:url(plex-700-ar.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Plex';font-weight:700;font-display:swap;src:url(plex-700-lat.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+:root{
+  --ink:#141210;--ink2:#4a443c;--paper:#fff;--wash:#f3f1ec;--line:#d9d4ca;--sig:#c8371b;--sig-ink:#fff;
+  --font:'Plex','Noto Nastaliq Urdu','Noto Sans Bengali','Nirmala UI','Segoe UI',Tahoma,system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.7 var(--font);accent-color:var(--sig)}
+::selection{background:var(--sig);color:#fff}
+h1,h2,h3,p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== صفحة التجهيز ===== */
+.top{border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font:700 44px/1 'Ruqaa',serif;text-decoration:none}
+.proto{font-size:14px;color:var(--ink2)}
+.lede{padding-block:44px 28px;display:grid;gap:14px;max-width:760px}
+.lede h1{font:700 clamp(34px,6vw,58px)/1.25 'Plex',sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.lede h1 em{font-style:normal;color:var(--sig)}
+.lede p{font-size:20px;color:var(--ink2);max-width:62ch}
+.steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;font-size:18px}
+.steps li::before{content:counter(s,arabic-indic);font:700 22px/1 'Plex';color:var(--sig);min-width:1.2em}
+.maker{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding-block:20px 40px}
+.block{border-top:2px solid var(--ink);padding-top:18px}
+.block h2{font:700 24px/1.3 'Plex';margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+label{display:grid;gap:6px;font-size:15px;font-weight:700}
+label small{font-weight:400;color:var(--ink2)}
+input,select,textarea{width:100%;min-height:52px;padding:12px 14px;border:1.5px solid var(--ink);border-radius:8px;background:var(--paper);font-size:18px;font-weight:400}
+input::placeholder{color:#7b746a}
+input:focus,select:focus{outline:3px solid var(--sig);outline-offset:1px}
+.ltr{direction:ltr;text-align:start}
+.pil{display:grid;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pil-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pil-head b{font-size:16px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:2px solid var(--ink);border-radius:8px;background:var(--paper);font-weight:700;font-size:17px;text-decoration:none;transition:background-color .15s,color .15s,transform .15s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn:active{transform:translateY(1px)}
+.btn.main{background:var(--sig);border-color:var(--sig);color:var(--sig-ink)}
+.btn.main:hover{background:#a82c14;border-color:#a82c14}
+.btn.quiet{border-color:var(--line);font-weight:400;min-height:44px;padding:0 14px;font-size:15px}
+.note{background:var(--wash);border-inline-start:0;border-radius:8px;padding:16px 18px;font-size:16px;color:var(--ink2)}
+.note b{color:var(--ink)}
+.note ul{margin:8px 0 0;padding-inline-start:20px}
+.foot{border-top:1px solid var(--line);padding-block:20px 40px;font-size:15px;color:var(--ink2)}
+
+/* ===== البطاقة المطبوعة (بطاقة تعليق مثل بطاقات الشنط) ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.tag{position:relative;display:grid;grid-template-rows:auto 1fr auto;background:#fff;border:3px solid var(--ink);border-radius:14px;overflow:hidden;break-inside:avoid;color:var(--ink)}
+.tag-top{background:var(--sig);color:#fff;padding:26px 16px 12px;text-align:center;position:relative}
+.tag-top::before{content:"";position:absolute;top:8px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--ink)}
+.tag-top b{display:block;font:700 34px/1.1 'Ruqaa',serif}
+.tag-top span{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;margin-top:4px}
+.tag-qr{padding:14px 18px 6px}
+.tag-qr svg{display:block;width:100%;height:auto}
+.tag-txt{padding:4px 16px 16px;display:grid;gap:6px;text-align:center}
+.tag-txt p{font-size:14px;line-height:1.55;font-weight:700}
+.tag-txt p[lang=en]{font-weight:400;font-size:13px}
+.tag-name{border-top:1.5px solid var(--ink);margin-top:6px;padding-top:8px;font-size:17px;font-weight:700}
+.tag-name small{display:block;font-weight:400;font-size:13px;color:var(--ink2)}
+.tag-try{display:block;text-align:center;font-size:14px;padding:10px;border-top:1px solid var(--line);color:var(--sig);font-weight:700}
+
+/* ===== صفحة المساعد (اللي مسح الباركود) ===== */
+.h-band{background:var(--sig);color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.h-band h1{font:700 clamp(20px,5.4vw,28px)/1.35 var(--font);text-wrap:balance}
+.h-band select{width:auto;min-height:44px;padding:6px 10px;border:1.5px solid #fff;background:transparent;color:#fff;font-size:15px;border-radius:8px}
+.h-band select option{color:var(--ink)}
+.h-main{max-width:640px;margin:0 auto;padding:20px 20px 60px;display:grid;gap:26px}
+.who{display:grid;gap:10px}
+.who .nm{font:700 clamp(30px,8vw,44px)/1.25 var(--font)}
+.who dl{margin:0;display:grid;gap:8px}
+.who dl div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:8px}
+.who dt{font-size:14px;color:var(--ink2);min-width:6.5em}
+.who dd{margin:0;font-size:21px;font-weight:700;overflow-wrap:anywhere}
+.who dd.big{font-size:clamp(24px,6.4vw,32px);line-height:1.4}
+.h-acts{display:grid;gap:10px}
+.h-acts .btn{min-height:62px;font-size:20px;width:100%}
+.h-acts .btn.call{background:var(--ink);color:#fff}
+.h-acts .btn.call:hover{background:#000}
+.sec{display:grid;gap:12px}
+.sec h2{font:700 22px/1.3 var(--font);border-top:2px solid var(--ink);padding-top:14px}
+.sec .hint{font-size:15px;color:var(--ink2)}
+.phr{display:grid;gap:8px}
+.phr button{min-height:60px;padding:12px 16px;text-align:start;border:1.5px solid var(--ink);border-radius:8px;background:#fff;font-size:19px;font-weight:700;line-height:1.5;transition:background-color .15s,color .15s}
+.phr button:hover,.phr button:active{background:var(--ink);color:#fff}
+.needs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.needs button{min-height:128px;padding:14px 10px;display:grid;justify-items:center;align-content:center;gap:8px;border:2px solid var(--ink);border-radius:10px;background:var(--wash);font-size:19px;font-weight:700;line-height:1.45;text-align:center;transition:background-color .15s,color .15s}
+.needs button:hover,.needs button:active{background:var(--ink);color:#fff}
+.needs svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:1.700;stroke-linecap:round;stroke-linejoin:round}
+.free{display:grid;gap:10px}
+.free .rowf{display:grid;grid-template-columns:1fr auto;gap:8px}
+.free .dir{display:flex;gap:8px;flex-wrap:wrap}
+.free .dir button{min-height:44px;padding:0 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font-size:15px}
+.free .dir button[aria-pressed=true]{background:var(--ink);color:#fff}
+.free output{display:block;min-height:64px;padding:14px 16px;border-radius:8px;background:var(--wash);font-size:24px;font-weight:700;line-height:1.5}
+.health{background:var(--wash);border-radius:8px;padding:14px 16px}
+.health summary{font-weight:700;cursor:pointer;min-height:32px}
+.health p{margin-top:8px;font-size:19px}
+.bad{max-width:520px;margin:18vh auto 0;padding:0 24px;text-align:center;display:grid;gap:16px}
+.bad p{font-size:22px;font-weight:700}
+
+/* شاشة «أرِه الشاشة»: جملة واحدة بحجم كبير */
+.show{position:fixed;inset:0;z-index:20;background:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:16px 20px calc(20px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transition:opacity .18s,visibility 0s .18s}
+.show.on{opacity:1;visibility:visible;transition:opacity .22s var(--ease)}
+.show .cap{font-size:15px;color:var(--ink2);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.show .txt{align-self:center;font:700 clamp(36px,10.5vw,76px)/1.35 var(--font);text-align:center;text-wrap:balance;overflow-wrap:anywhere}
+.show.on .txt{animation:rise .5s var(--ease)}
+.show .sub{text-align:center;font-size:17px;color:var(--ink2);margin-bottom:14px}
+.show .bar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.show .bar .btn{min-height:60px;font-size:19px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;transition-duration:.01s!important}}
+
+@media print{
+  @page{size:A4;margin:10mm}
+  body{font-size:12pt}
+  .top,.lede,.block:not(.out),.foot,.note,.acts,.tag-try{display:none!important}
+  .maker{padding:0;display:block}.block.out{border:0;padding:0}.block.out h2{display:none}
+  .cards{grid-template-columns:repeat(2,90mm);gap:8mm;justify-content:center}
+  .tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
